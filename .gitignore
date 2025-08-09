@@ -1,0 +1,17 @@
+# .gitignore
+
+# Java / Spring Boot
+/target/
+/bin/
+/*.iml
+/.idea/
+/*.class
+/.project
+/.settings/
+
+# Node.js (if frontend uses npm later)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
