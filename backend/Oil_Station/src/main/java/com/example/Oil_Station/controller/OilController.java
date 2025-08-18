@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Oil_Station.dto.OilDTO;
+import com.example.Oil_Station.entity.Oil;
 import com.example.Oil_Station.service.OilService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import jakarta.validation.Valid;
 
 @RestController
@@ -24,23 +24,23 @@ public class OilController {
     private OilService oilService;
 
     @GetMapping
-    public List<OilDTO> getAllOils() {
+    public List<Oil> getAllOils() {
         return oilService.getAllOils();
     }
 
     @GetMapping("/{id}")
-    public OilDTO getOilById(@PathVariable Long id) {
+    public Oil getOilById(@PathVariable Long id) {
         return oilService.getOilById(id);
     }
 
     @PostMapping
-    public OilDTO addOil(@Valid @RequestBody OilDTO oilDTO) {
-        return oilService.addOil(oilDTO);
+    public Oil addOil(@RequestBody Oil oil) {
+        return oilService.addOil(oil);
     }
 
     @PutMapping("/{id}")
-    public OilDTO updateBook(@PathVariable Long id, @Valid @RequestBody OilDTO oilDTO) {
-        return oilService.updateOil(id, oilDTO);
+    public Oil updateBook(@PathVariable Long id, @Valid @RequestBody Oil oil) {
+        return oilService.updateOil(id, oil);
     }
 
     @DeleteMapping("/{id}")

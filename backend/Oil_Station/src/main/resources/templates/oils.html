@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Oil List</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h1>Available Oils</h1>
+
+    
+    <div style="margin-bottom: 20px;">
+        <a th:href="@{/new}"><button>Add New Oil</button></a>
+    </div>
+
+    <table border="1">
+        <tr>
+            <th>Brand</th>
+            <th>Product</th>
+            <th>Type</th>
+            <th>Viscosity</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="oil : ${oils}">
+            <td th:text="${oil.brandName}"></td>
+            <td th:text="${oil.productName}"></td>
+            <td th:text="${oil.oilType}"></td>
+            <td th:text="${oil.viscosityGrade}"></td>
+            <td th:text="${oil.price}"></td>
+            <td>
+                <a th:href="@{'/oils/update/' + ${oil.id}}"><button>Edit</button></a>
+                <a th:href="@{'/delete/' + ${oil.id}}"><button>Delete</button></a>
+                <a th:href="@{'/oil/' + ${oil.id}}"><button>View</button></a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
