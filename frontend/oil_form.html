@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Oil Form</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1 id="formTitle">Add Oil</h1>
+  <form id="oilForm">
+    <input type="hidden" id="oilId">
+    <label>Brand: <input type="text" id="brandName" required></label><br>
+    <label>Product: <input type="text" id="productName" required></label><br>
+    <label>Type: <input type="text" id="oilType"></label><br>
+    <label>Viscosity: <input type="text" id="viscosityGrade"></label><br>
+    <label>Price: <input type="number" step="0.01" id="price" required></label><br>
+    <button type="submit">Save</button>
+  </form>
+  <button onclick="window.location.href='oils.html'">Back</button>
+
+  <script src="js/oil_form.js"></script>
+</body>
+</html>
